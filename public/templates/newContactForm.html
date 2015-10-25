@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-11">
+        <div class="panel panel-info">
+            <div class="panel-heading">New contact</div>
+            <div class="panel-body">
+                <form name="newContactForm" novalidate ng-submit="sendForm()">
+                    <div class="form-group" ng-class="{ 'has-error': newContactForm.name.$dirty && newContactForm.name.$invalid }">
+                        <label for="inputname">Contact name</label>
+                        <input type="text" class="form-control" id="inputname" name="name" ng-model="formData.name" placeholder="Name" required>
+                        <ng-messages for="newContactForm.name.$error" class="text-danger" ng-if="newContactForm.name.$dirty">
+                            <ng-message when="required">This field is required</ng-message>
+                        </ng-messages>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputsurname">Surname</label>
+                        <input type="text" class="form-control" id="inputsurname" name="surname" ng-model="formData.surname" placeholder="Surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputcompany">Company</label>
+                        <input type="text" class="form-control" id="inputcompany" name="company" ng-model="formData.company" placeholder="Company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputemail">Email</label>
+                        <input type="email" class="form-control" id="inputemail" name="email" ng-model="formData.email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputtelephone">Telephone number</label>
+                        <input type="text" class="form-control" id="inputtelephone" name="telephone" ng-model="formData.telephone" placeholder="Telephone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputaddress">Adress</label>
+                        <input type="text" class="form-control" id="inputaddress" name="address" ng-model="formData.address" placeholder="Address">
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': newContactForm.group.$dirty && newContactForm.group.$invalid }">
+                        <label for="inputgroup">Group</label>
+                        <input type="text" class="form-control" id="inputgroup" name="group" ng-model="formData.group" placeholder="Group" required>
+                        <ng-messages for="newContactForm.group.$error" class="text-danger" ng-if="newContactForm.group.$dirty">
+                            <ng-message when="required">This field is required</ng-message>
+                        </ng-messages>
+                    </div>
+                    <button type="submit" ng-disabled="newContactForm.$invalid || !loggedUser.isLogged" class="btn btn-default">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

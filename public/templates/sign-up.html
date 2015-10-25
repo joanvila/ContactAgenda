@@ -1,0 +1,60 @@
+<div class="row-fluid">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-info panel-login">
+            <div class="panel-heading">Sign Up</div>
+            <div class="panel-body">
+                <form name="signupForm" class="form-horizontal" ng-submit="signup()" novalidate>
+                    <div class="form-group">
+                        <label for="inputname" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputname" name="name" ng-model="signupFormData.name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': signupForm.username.$dirty && signupForm.username.$invalid }">
+                        <label for="inputusername" class="col-sm-2 control-label">Username*</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputusername" name="username" ng-model="signupFormData.username" placeholder="Username" required>
+                            <ng-messages for="signupForm.username.$error" class="text-danger" ng-if="signupForm.username.$dirty">
+                                <ng-message when="required">This field is required</ng-message>
+                            </ng-messages>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputemail" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputemail" name="email" ng-model="signupFormData.email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': signupForm.password.$dirty && signupForm.password.$invalid }">
+                        <label for="inputpassword" class="col-sm-2 control-label">Password*</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputpassword" name="password" ng-model="signupFormData.password" placeholder="Password" required>
+                            <ng-messages for="signupForm.password.$error" class="text-danger" ng-if="signupForm.password.$dirty">
+                                <ng-message when="required">This field is required</ng-message>
+                            </ng-messages>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': signupForm.password.$dirty && signupFormData.passwordR != signupFormData.password }">
+                        <label for="inputpasswordR" class="col-sm-2 control-label">Repeat password*</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputpasswordR" name="passwordR" ng-model="signupFormData.passwordR" placeholder="Password" required>
+                            <ng-messages for="signupForm.passwordR.$error" class="text-danger" ng-if="signupForm.passwordR.$dirty">
+                                <ng-message when="required">Passwords don't match</ng-message>
+                            </ng-messages>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <p>* fields are required</p>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-default">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-11">
+        <div class="panel panel-info">
+            <div class="panel-heading">{{contact.name}} {{contact.surname}}</div>
+            <div class="panel-body">
+                <img class="profile-picture img-responsive center-block" src="../assets/profile2.jpg" alt="Profile picture"/>
+                <dl class="dl-horizontal contact-details">
+                    <dt>Name</dt>
+                    <dd>{{contact.name}} {{contact.surname}}</dd>
+                    <dt>Company</dt>
+                    <dd>{{contact.company}}</dd>
+                    <dt>Email</dt>
+                    <dd>{{contact.email}}</dd>
+                    <dt>Telephone</dt>
+                    <dd>{{contact.telephone}}</dd>
+                    <dt>Address</dt>
+                    <dd>{{contact.address}}</dd>
+                    <dt>Group</dt>
+                    <dd>{{contact.group}}</dd>
+                </dl>
+                <div class="container-fluid">
+                    <div class="pull-left">
+                        <a ui-sref="agenda.new" class="btn btn-default">Back</a>
+                    </div>
+                    <div class="pull-right">
+                        <button ng-click="removeContact()" class="btn btn-danger">Delete contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

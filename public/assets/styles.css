@@ -1,0 +1,51 @@
+.profile-picture {
+    height: 150px;
+    width: 150px;
+    border-radius: 200px;
+}
+
+.contact-details {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.contactBackground {
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    padding-top: 15px;
+    padding-bottom: 7px;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+.noDecorateLink, .noDecorateLink:link, .noDecorateLink:hover, .noDecorateLink:visited, .noDecorateLink:active {
+    color: black;
+    text-decoration: none;
+}
+
+.noDecorateLink:hover {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-box {
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.group-agenda {
+    padding-bottom: 20px;
+}
+
+.panel-login {
+    margin-top: 50px;
+}
+
+.logout-link {
+    cursor: pointer;
+}

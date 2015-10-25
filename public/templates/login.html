@@ -1,0 +1,37 @@
+<div class="row-fluid">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-info panel-login">
+            <div class="panel-heading">Login</div>
+            <div class="panel-body">
+                <div class="alert alert-danger" role="alert" ng-if="authError">
+                    <span>Sorry, your username or password are incorrect</span>
+                </div>
+                <form name="loginForm" class="form-horizontal" ng-submit="login()" novalidate>
+                    <div class="form-group" ng-class="{ 'has-error': loginForm.username.$dirty && loginForm.username.$invalid }">
+                        <label for="inputusername" class="col-sm-2 control-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputusername" name="username" ng-model="loginFormData.username" placeholder="Username" required>
+                            <ng-messages for="loginForm.username.$error" class="text-danger" ng-if="loginForm.username.$dirty">
+                                <ng-message when="required">This field is required</ng-message>
+                            </ng-messages>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$invalid }">
+                        <label for="inputpassword" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputpassword" name="password" ng-model="loginFormData.password" placeholder="Password" required>
+                            <ng-messages for="loginForm.password.$error" class="text-danger" ng-if="loginForm.password.$dirty">
+                                <ng-message when="required">This field is required</ng-message>
+                            </ng-messages>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-default">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
